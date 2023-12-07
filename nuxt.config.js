@@ -1,5 +1,8 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  app: {
+    baseURL: "/nuxt-app/",
+  },
   head: {
     title: 'nuxt-app',
     htmlAttrs: {
