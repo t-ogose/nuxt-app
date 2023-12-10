@@ -5,7 +5,7 @@ module.exports = {
       exec_mode: 'cluster',
       instances: 'max',
       script: './node_modules/nuxt/bin/nuxt.js',
-      cwd: '/usr/share/nginx/html/app/nuxt-app/',
+      cwd: '/var/www/html/test/nuxt-app/nuxt-app/',
       args: 'start',
       env: {
         PORT: 4001,
