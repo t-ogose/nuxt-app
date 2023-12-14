@@ -1,19 +1,67 @@
 {
-  "name": "nuxt-app",
+  "name": "ichigen",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "heroku-postbuild": "npm run build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
+    "lint:prettier": "prettier --check .",
+    "lint": "npm run lint:js && npm run lint:style && npm run lint:prettier",
+    "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix && npm run lint:style -- --fix"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/composition-api": "^0.33.1",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/pwa": "^3.3.5",
+    "@svgr/webpack": "^6.5.1",
+    "cookieparser": "^0.1.0",
     "core-js": "^3.25.3",
-    "nuxt": "^2.15.8",
-    "vue": "^2.7.10",
+    "dayjs": "^1.11.7",
+    "googleapis": "^109.0.0",
+    "js-cookie": "^3.0.1",
+    "nuxt": "^2.13.3",
+    "nuxt-basic-auth-module": "^1.4.1",
+    "nuxt-client-init-module": "^0.3.0",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "qs": "^6.11.0",
+    "sass": "^1.56.1",
+    "sass-loader": "^10.4.1",
+    "vue": "^2.7.14",
+    "vue-good-table": "^2.21.11",
+    "vue-json-to-csv": "^1.1.8",
+    "vue-select": "^3.20.2",
     "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "vuex": "^3.6.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/eslint-config-typescript": "^11.0.0",
+    "@nuxtjs/eslint-module": "^3.1.0",
+    "@nuxtjs/style-resources": "^1.2.1",
+    "@nuxtjs/stylelint-module": "^4.1.0",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-vue": "^9.5.1",
+    "modern-css-reset": "^1.4.0",
+    "postcss-html": "^1.5.0",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.13.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^28.0.0"
+  }
 }
